@@ -24,3 +24,8 @@ hs_err_pid*
 # IntelliJ
 /.idea/
 *.iml
+
+# MATSim files and outputs
+**/output
+scenarios/santiago
+dependency-reduced-pom.xml

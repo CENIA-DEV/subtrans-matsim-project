@@ -1,4 +1,4 @@
-# matsim-example-project
+# SUBTRANS - MATSim Test Project
 
 A small example of how to use MATSim as a library.
 
@@ -11,23 +11,6 @@ A recommended directory structure is as follows:
   * One subdirectory for each scenario, e.g. `scenarios/mySpecialScenario01`.
   * This minimally contains a config file, a network file, and a population file.
   * Output goes one level down, e.g. `scenarios/mySpecialScenario01/output-from-a-good-run/...`.
-  
-  
-### Import into eclipse
-
-1. download a modern version of eclipse. This should have maven and git included by default.
-1. `file->import->git->projects from git->clone URI` and clone as specified above.  _It will go through a 
-sequence of windows; it is important that you import as 'general project'._
-1. `file->import->maven->existing maven projects`
-
-Sometimes, step 3 does not work, in particular after previously failed attempts.  Sometimes, it is possible to
-right-click to `configure->convert to maven project`.  If that fails, the best thing seems to remove all 
-pieces of the failed attempt in the directory and start over.
-
-### Import into IntelliJ
-
-`File -> New -> Project from Version Control` paste the repository url and hit 'clone'. IntelliJ usually figures out
-that the project is a maven project. If not: `Right click on pom.xml -> import as maven project`.
 
 ### Java Version
 
@@ -55,7 +38,6 @@ java -jar matsim-example-project-0.0.1-SNAPSHOT.jar
 ```
 
 
-
 ### Licenses
 (The following paragraphs need to be adjusted according to the specifications of your project.)
 
@@ -67,3 +49,4 @@ The **MATSim input files, output files, analysis data and visualizations** are l
 **Other data files**, in particular in `original-input-data`, have their own individual licenses that need to be individually clarified with the copyright holders.
 
 
+# MATSim Outputs

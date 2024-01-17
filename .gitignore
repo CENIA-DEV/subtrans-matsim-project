@@ -27,5 +27,5 @@ hs_err_pid*
 
 # MATSim files and outputs
 **/output
-scenarios/santiago
-dependency-reduced-pom.xml
+scenarios/base_scenario-santiago
+*pom.xml

@@ -3,7 +3,8 @@
 <config>
 
 <!-- ====================================================================== -->
-	<!-- JDEQSim: internal mobsim of MATSim, Jva Discrete Event Queue Simulation -->
+	<!-- JDEQSim: internal mobsim of MATSim, Jva Discrete Event Queue
+	Simulation -->
 	<module name="JDEQSim" >
 		<param name="carSize" value="7.5" />
 		<param name="endTime" value="undefined" />
@@ -19,7 +20,8 @@
 	<module name="TimeAllocationMutator" >
 		<param name="mutationAffectsDuration" value="true" />
 
-		<!-- Default:1800.0; Defines how many seconds a time mutation can maximally shift a time. -->
+		<!-- Default:1800.0; Defines how many seconds a time mutation can
+		maximally shift a time. -->
 		<param name="mutationRange" value="1800.0" />
 	</module>
 
@@ -104,16 +106,25 @@
 
 	<module name="counts" >
 
-		<!-- Transport modes that will be respected for the counts comparison. 'car' is default, which includes also bussed from the pt simulation module. Use this parameter in combination with 'filterModes' = true! -->
+		<!-- Transport modes that will be respected for the counts comparison.
+		'car' is default, which includes also bussed from the pt simulation
+		module. Use this parameter in combination with 'filterModes' = true! -->
 		<param name="analyzedModes" value="car" />
 
-		<!-- Specifies over how many iterations the link volumes should be averaged that are used for the counts comparison. Use 1 or 0 to only use the link volumes of a single iteration. This values cannot be larger than the value specified for writeCountsInterval -->
+		<!-- Specifies over how many iterations the link volumes should be
+		averaged that are used for the counts comparison. Use 1 or 0 to only
+		use the link volumes of a single iteration. This values cannot be
+		larger than the value specified for writeCountsInterval -->
 		<param name="averageCountsOverIterations" value="5" />
 
-		<!-- factor by which to re-scale the simulated values.  necessary when simulation runs with something different from 100%.  needs to be adapted manually -->
+		<!-- factor by which to re-scale the simulated values. Necessary when
+		simulation runs with something different from 100%.  needs to be
+		adapted manually -->
 		<param name="countsScaleFactor" value="10.0" />
 
-		<!-- distance to distanceFilterCenterNode to include counting stations. The unit of distance is the Euclidean distance implied by the coordinate system -->
+		<!-- distance to distanceFilterCenterNode to include counting stations.
+		The unit of distance is the Euclidean distance implied by the coordinate
+		system -->
 		<param name="distanceFilter" value="null" />
 
 		<!-- node id for center node of distance filter -->

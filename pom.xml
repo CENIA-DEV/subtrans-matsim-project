@@ -2,23 +2,21 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.matsim</groupId>
-	<artifactId>matsim-example-project</artifactId>
+	<groupId>org.matsim.santiago</groupId>
+	<artifactId>matsim-santiago</artifactId>
+	<name>matsim-santiago</name>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>MATSim example project</name>
-	<description>MATSim example project</description>
+	<description>MATSim SubTrans Santiago project</description>
 
 	<!-- <properties>: This section is used to define project-wide properties.
 	They can be referenced elsewhere in the POM file using the notation ${property.name}.
 	-->
 	<properties>
-		<!-- Options: stable build based on pull requests (e.g. 15.0-PR2344), weekly (e.g. 15.0-2023w01) or official (e.g. 14.0) releases -->
-		<!--		<matsim.version>16.0-PR2509</matsim.version>-->
 		<matsim.version>15.0</matsim.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<maven.compiler.release>17</maven.compiler.release>
+		<!-- <maven.compiler.release>17</maven.compiler.release> -->
 	</properties>
 
 	<repositories>
@@ -54,7 +52,6 @@
 			<artifactId>matsim</artifactId>
 			<version>${matsim.version}</version>
 		</dependency>
-
 		<dependency>
 			<!-- Include the JUnit testing library.  Not transitive. -->
 			<groupId>junit</groupId>
@@ -62,7 +59,6 @@
 			<version>4.13.2</version>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<!--MATSim test infrastructure.  Not transitive.-->
 			<groupId>org.matsim</groupId>
@@ -71,7 +67,6 @@
 			<version>${matsim.version}</version>
 			<scope>test</scope>
 		</dependency>
-
 		<!--dependencies from here to where stated below are added as a service; they can be removed if you don't need them-->
 		<!--to get ExamplesUtils: -->
 		<dependency>
@@ -83,11 +78,36 @@
 			matsim-examples dependency into "test" scope if you want to make other projects dependent on your this project here. kai,
 			jan'21 -->
 		</dependency>
+		<dependency>
+			<groupId>org.locationtech.jts</groupId>
+			<artifactId>jts-core</artifactId>
+			<version>1.18.2</version>
+		</dependency>
 
 		<!--some contribs:-->
 		<dependency>
 			<groupId>org.matsim.contrib</groupId>
 			<artifactId>minibus</artifactId>
+			<version>${matsim.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.matsim.contrib</groupId>
+			<artifactId>emissions</artifactId>
+			<version>${matsim.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.matsim.contrib</groupId>
+			<artifactId>roadpricing</artifactId>
+			<version>${matsim.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.matsim.contrib</groupId>
+			<artifactId>dvrp</artifactId>
+			<version>${matsim.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.matsim.contrib</groupId>
+			<artifactId>drt</artifactId>
 			<version>${matsim.version}</version>
 		</dependency>
 		<dependency>
@@ -98,11 +118,6 @@
 		<dependency>
 			<groupId>org.matsim.contrib</groupId>
 			<artifactId>noise</artifactId>
-			<version>${matsim.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.matsim.contrib</groupId>
-			<artifactId>roadpricing</artifactId>
 			<version>${matsim.version}</version>
 		</dependency>
 		<dependency>
@@ -120,6 +135,16 @@
 			<artifactId>freight</artifactId>
 			<version>${matsim.version}</version>
 		</dependency>
+		<!-- <dependency>
+			<groupId>org.matsim.contrib</groupId>
+			<artifactId>cadytsIntegration</artifactId>
+			<version>${matsim.version}</version>
+		</dependency> -->
+		<dependency>
+			<groupId>org.matsim.contrib</groupId>
+			<artifactId>vsp</artifactId>
+			<version>${matsim.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.matsim.contrib</groupId>
 			<artifactId>bicycle</artifactId>
@@ -127,17 +152,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.matsim.contrib</groupId>
-			<artifactId>emissions</artifactId>
-			<version>${matsim.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.matsim.contrib</groupId>
 			<artifactId>application</artifactId>
-			<version>${matsim.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.matsim.contrib</groupId>
-			<artifactId>vsp</artifactId>
 			<version>${matsim.version}</version>
 		</dependency>
 		<!-- <dependency>
@@ -152,6 +167,11 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.11.0</version>
+			</plugin>
 			<plugin>
 				<!-- This plugin makes source files and javadocs available inside eclipse.  In IntelliJ, this works without plugin.-->
 				<groupId>org.apache.maven.plugins</groupId>
@@ -205,11 +225,6 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.11.0</version>
 			</plugin>
 		</plugins>
 	</build>

@@ -50,8 +50,7 @@ java -jar matsim-example-project-0.0.1-SNAPSHOT.jar
 
 A more detailed version of the command
 ```sh
-java -cp matsim-example-project-0.0.1-SNAPSHOT.jar /
--Xmx1024m org.matsim.project.RunMatsim scenarios\equil\config.xml
+java -cp matsim-example-project-0.0.1-SNAPSHOT.jar -Xmx1024m org.matsim.project.RunMatsim scenarios\equil\config.xml
 ```
 - `-cp` is a class search path of directories and zip/jar files
 - `-Xmx1024m` Java Virtual Machine (JVM) option that sets the maximum heap size for the Java process. In this case, it sets the maximum heap size to 1024 megabytes (1 gigabyte)

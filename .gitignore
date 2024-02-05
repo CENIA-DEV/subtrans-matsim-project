@@ -32,3 +32,5 @@ scenarios/base_scenario-santiago
 output.log
 /.apt_generated/
 /.apt_generated_tests/
+scenarios/santiago-chile/input/network_merged_cl.xml
+scenarios/santiago-chile/input/randomized_expanded_plans_with_attributes.xml

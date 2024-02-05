@@ -29,3 +29,6 @@ hs_err_pid*
 **/output
 scenarios/base_scenario-santiago
 *pom.xml
+output.log
+/.apt_generated/
+/.apt_generated_tests/

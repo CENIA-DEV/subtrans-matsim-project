@@ -137,7 +137,7 @@
 		<param name="inputCRS" value="null" />
 
 		<!-- input file name to counts package -->
-		<param name="inputCountsFile" value="../santiago/input/counts_merged_VEH_C01.xml" />
+		<param name="inputCountsFile" value="input/counts_merged_VEH_C01.xml" />
 
 		<!-- possible values: `html', `kml', `txt', `all' -->
 		<param name="outputformat" value="all" />
@@ -194,11 +194,11 @@
 		<param name="inputCRS" value="null" />
 
 		<param name="inputChangeEventsFile" value="null" />
-		<param name="inputNetworkFile" value="../santiago/input/network_merged_cl.xml.gz" />
+		<param name="inputNetworkFile" value="input/network_merged_cl.xml.gz" />
 		<param name="laneDefinitionsFile" value="null" />
 		<param name="timeVariantNetwork" value="false" />
 	</module>
-
+	<!-- C:\Users\faroj\Cenia-SubTrans\subtrans-matsim-project\scenarios\santiago-chile\input\gantries.xml -->
 <!-- ====================================================================== -->
 
 	<module name="parallelEventHandling" >
@@ -3143,11 +3143,11 @@
 		<param name="inputCRS" value="null" />
 
 		<!-- Path to a file containing person attributes (required file format: ObjectAttributes). -->
-		<!--<param name="inputPersonAttributesFile" value="../santiago/input/expandedAgentAttributes.xml" />-->
+		<!--<param name="inputPersonAttributesFile" value="input/expandedAgentAttributes.xml" />-->
 		<!--no longer necessary for newer matsim versions; not sure if we want to retrofit older matsim versions (and if so how).  kai, oct'19-->
 
-		<!--<param name="inputPlansFile" value="../santiago/input/randomized_expanded_plans.xml.gz" />-->
-		<param name="inputPlansFile" value="../santiago/input/randomized_expanded_plans_with_attributes.xml.gz" />
+		<!--<param name="inputPlansFile" value="input/randomized_expanded_plans.xml.gz" />-->
+		<param name="inputPlansFile" value="input/randomized_expanded_plans_with_attributes.xml" />
 		<!--this would also work with "input/randomized...". kai, oct'19-->
 
 		<!-- Defines how routes are stored in memory. Currently supported: LinkNetworkRoute, CompressedNetworkRoute. -->
@@ -3157,7 +3157,11 @@
 		<param name="removingUnnecessaryPlanAttributes" value="true" />
 
 		<!-- Name of the (Object)Attribute defining the subpopulation to which pertains a Person (as freight, through traffic, etc.). The attribute must be of String type.  Change away from default only in desperate situations. -->
-		<param name="subpopulationAttributeName" value="carUsers" />
+		<!-- <param name="subpopulationAttributeName" value="carUsers" /> -->
+		<!-- NOTE: This parameter does not exist any more.  The attributeName is now fixed at "subpopulation", and there is PopulationUtils#set/getSubpopulation(person, ...) .  -->
+		<!-- I can't say if removing the above information from the code will change it or not.  kai, jun'22 -->
+		<!-- https://gitlab.com/cegb/matsim_santiago/-/blob/main/scenarios/santiago-v2b/config_baseCase10pct.xml?ref_type=heads#L183 -->
+
 	</module>
 
 <!-- ====================================================================== -->
@@ -3297,7 +3301,7 @@
 		<param name="usingFastCapacityUpdate" value="false" />
 
 		<!-- if the qsim should use as many runners as there are threads (Christoph's dissertation version) or more of them, together with a thread pool (seems to be faster in some situations, but is not tested). -->
-		<param name="usingThreadpool" value="false" />
+		<!-- <param name="usingThreadpool" value="false" /> -->
 
 		<!-- Defines what happens if an agent wants to depart, but the specified vehicle is not available. One of: teleport wait exception  -->
 		<param name="vehicleBehavior" value="teleport" />
@@ -3308,9 +3312,9 @@
 
 <!-- ====================================================================== -->
 
-	<module name="roadpricing" >
-		<param name="tollLinksFile" value="../santiago/input/gantries.xml" />
-	</module>
+	<!-- <module name="roadpricing" >
+		<param name="tollLinksFile" value="input/gantries.xml" />
+	</module> -->
 
 <!-- ====================================================================== -->
 
@@ -3368,7 +3372,7 @@
 		<param name="transitModes" value="bus,pt,metro" />
 
 		<!-- Input file containing the transit schedule to be simulated. -->
-		<param name="transitScheduleFile" value="../santiago/input/transitschedule_simplified.xml" />
+		<param name="transitScheduleFile" value="input/transitschedule_simplified.xml" />
 
 		<!-- Optional input file containing additional attributes for transit stop facilities, stored as ObjectAttributes. -->
 		<param name="transitStopsAttributesFile" value="null" />
@@ -3377,7 +3381,7 @@
 		<param name="useTransit" value="true" />
 
 		<!-- Input file containing the vehicles used by the departures in the transit schedule. -->
-		<param name="vehiclesFile" value="../santiago/input/transitvehicles.xml" />
+		<param name="vehiclesFile" value="input/transitvehicles.xml" />
 	</module>
 
 <!-- ====================================================================== -->

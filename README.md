@@ -45,17 +45,27 @@ mvnw.cmd clean package
 This will download all necessary dependencies (it might take a while the first time it is run) and create a file `matsim-example-project-0.0.1-SNAPSHOT.jar` in the top directory. This jar-file can either be double-clicked to start the MATSim GUI, or executed with Java on the command line:
 
 ```sh
-java -jar matsim-example-project-0.0.1-SNAPSHOT.jar
+java -jar matsim-santiago-0.0.1-SNAPSHOT.jar
 ```
 
 A more detailed version of the command
 ```sh
-java -cp matsim-example-project-0.0.1-SNAPSHOT.jar -Xmx1024m org.matsim.project.RunMatsim scenarios\equil\config.xml
+java -cp matsim-santiago-0.0.1-SNAPSHOT.jar -Xmx2048m org.matsim.project.RunMatsim scenarios\equil\config.xml
 ```
 - `-cp` is a class search path of directories and zip/jar files
 - `-Xmx1024m` Java Virtual Machine (JVM) option that sets the maximum heap size for the Java process. In this case, it sets the maximum heap size to 1024 megabytes (1 gigabyte)
 - `org.matsim.project.RunMatsim` is the main class that Java will execute. The actual program logic is within this class.
 - `scenarios\equil\config.xml` is a command-line argument passed to the `org.matsim.project.RunMatsim` class. It specifies the path to a configuration file (config.xml)
+
+For our study case of Santiago, Chile
+```sh
+java -cp matsim-santiago-0.0.1-SNAPSHOT.jar -Xmx2048m org.matsim.project.RunMatsim .\scenarios\santiago-chile\config_baseCase10pct.xml *> output.log
+```
+
+Run windows executable with spaces in the filepath
+```
+& "C:\Program Files\Java\jdk-11.0.17\bin\java.exe" -Xmx2048m org.matsim.project.RunMatsim C:\inputSantiago\config_baseCase1pct.xml
+```
 
 # MATSim Outputs
 

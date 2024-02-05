@@ -21,6 +21,8 @@ package org.matsim.project;
 // import com.google.inject.internal.asm.$Type;
 // import org.matsim.api.core.v01.Id;
 import org.matsim.api.core.v01.Scenario;
+import org.matsim.contrib.roadpricing.RoadPricingConfigGroup;
+import org.matsim.contrib.roadpricing.RoadPricingModule;
 // import org.matsim.api.core.v01.TransportMode;
 // import org.matsim.api.core.v01.network.Link;
 // import org.matsim.contrib.otfvis.OTFVisLiveModule;
@@ -58,7 +60,10 @@ public class RunMatsim{
 	
 	private static final Logger logger = LogManager.getLogger(RunMatsim.class);
 	public static void main(String[] args) {
-
+		// --- Print current directory
+		logger.info("Current directory: " + System.getProperty("user.dir"));
+		
+		// --- Load the config file
 		Config config;
 		if ( args==null || args.length==0 || args[0]==null ){
 			config = ConfigUtils.loadConfig( "scenarios/equil/config.xml" );
@@ -66,8 +71,7 @@ public class RunMatsim{
 			config = ConfigUtils.loadConfig( args );
 		}
 		// --- Print out the config file
-		logger.info("CONFIG");
-        logger.info(config.toString());
+        // logger.info(config.toString());
 
 		// --- Exit the program
 		// System.exit(0);
@@ -87,6 +91,14 @@ public class RunMatsim{
 		Controler controler = new Controler( scenario ) ;
 		
 		// possibly modify controler here
+
+		// --- Add road pricing module if road pricing file is present
+		// RoadPricingConfigGroup rpcg = ConfigUtils.addOrGetModule( scenario.getConfig(), RoadPricingConfigGroup.class );
+		// if ( rpcg.getTollLinksFile()!=null && !rpcg.getTollLinksFile().equals( "" ) ){
+		// 	// found road pricing file, so am switching on road pricing:
+		// 	controler.addOverridingModule( new RoadPricingModule() );
+		// }
+
 
 		// controler.addOverridingModule( new OTFVisLiveModule() ) ;
 

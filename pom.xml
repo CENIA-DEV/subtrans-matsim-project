@@ -13,7 +13,7 @@
 	They can be referenced elsewhere in the POM file using the notation ${property.name}.
 	-->
 	<properties>
-		<matsim.version>15.0</matsim.version>
+		<matsim.version>13.0</matsim.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<!-- <maven.compiler.release>17</maven.compiler.release> -->
@@ -150,11 +150,11 @@
 			<artifactId>bicycle</artifactId>
 			<version>${matsim.version}</version>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.matsim.contrib</groupId>
 			<artifactId>application</artifactId>
 			<version>${matsim.version}</version>
-		</dependency>
+		</dependency> -->
 		<!-- <dependency>
 			<groupId>org.matsim.contrib</groupId>
 			<artifactId>simwrapper</artifactId>
@@ -201,8 +201,8 @@
 								<!-- The following sets the main class for the executable jar as you otherwise would with the assembly plugin -->
 								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
 									<manifestEntries>
-										<!-- <Main-Class>org.matsim.project.RunMatsim</Main-Class> -->
-										<Main-Class>org.matsim.gui.MATSimGUI</Main-Class>
+										<Main-Class>org.matsim.project.RunMatsim</Main-Class>
+										<!-- <Main-Class>org.matsim.gui.MATSimGUI</Main-Class> -->
 										<Specification-Vendor>org.matsim</Specification-Vendor>
 										<Implementation-Vendor>org.matsim</Implementation-Vendor>
 										<Implementation-Version>${project.version}</Implementation-Version>

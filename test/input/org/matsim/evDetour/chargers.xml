@@ -6,5 +6,5 @@
     <charger id="charger3" link="172" plug_power="100.0" plug_count="5"/>
 	<charger id="charger4" link="90" plug_power="100.0" plug_count="5"/>
 	<charger id="charger5" link="89" plug_power="100.0" plug_count="5"/>
-	
+
 </chargers>

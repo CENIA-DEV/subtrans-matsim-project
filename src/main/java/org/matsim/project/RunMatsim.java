@@ -57,12 +57,12 @@ import org.apache.logging.log4j.Logger;
  *
  */
 public class RunMatsim{
-	
+
 	private static final Logger logger = LogManager.getLogger(RunMatsim.class);
 	public static void main(String[] args) {
 		// --- Print current directory
 		logger.info("Current directory: " + System.getProperty("user.dir"));
-		
+
 		// --- Load the config file
 		Config config;
 		if ( args==null || args.length==0 || args[0]==null ){
@@ -81,15 +81,15 @@ public class RunMatsim{
 		// possibly modify config here
 
 		// ---
-		
+
 		Scenario scenario = ScenarioUtils.loadScenario(config) ;
 
 		// possibly modify scenario here
-		
+
 		// ---
-		
+
 		Controler controler = new Controler( scenario ) ;
-		
+
 		// possibly modify controler here
 
 		// --- Add road pricing module if road pricing file is present
@@ -103,10 +103,10 @@ public class RunMatsim{
 		// controler.addOverridingModule( new OTFVisLiveModule() ) ;
 
 		// controler.addOverridingModule( new SimWrapperModule() );
-		
+
 		// ---
-		
+
 		controler.run();
 	}
-	
+
 }

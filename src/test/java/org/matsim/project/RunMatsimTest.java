@@ -40,7 +40,7 @@ import java.net.URL;
  *
  */
 public class RunMatsimTest {
-	
+
 	@Rule public MatsimTestUtils utils = new MatsimTestUtils() ;
 
 	@Test

@@ -8,7 +8,7 @@
     <img src="docs\imgs\MATSim-loop-sometimes-called-the-MATSim-cycle.png" />
     Figure 1.1. MATSim Loop.
   </div>
-- 
+-
 
 ## Project Info
 

@@ -18,7 +18,7 @@
 		<act type="h" x="-25000" y="0" link="1" />
 	</plan>
 </person>
- 
+
 <person id="2">
 	<plan>
 		<act type="h" x="-25000" y="0" link="1" end_time="05:59" />

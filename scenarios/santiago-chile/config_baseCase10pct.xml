@@ -38,7 +38,7 @@
 
 	<module name="controler" >
 
-		<!-- Sets whether graphs showing some analyses should automatically 
+		<!-- Sets whether graphs showing some analyses should automatically
 		be generated during the simulation. The generation of graphs usually
 		takes a small amount of time that does not have any weight in big
 		simulations, but add a significant overhead in smaller runs or in test
